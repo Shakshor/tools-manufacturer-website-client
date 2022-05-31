@@ -24,7 +24,7 @@ const Banner = () => {
             <div id="slide2" className="carousel-item relative w-full">
 
                 {/* <img src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB" className="w-full" /> */}
-                <div class="hero min-h-screen" style={{ backgroundImage: `url(${banner1})` }}>
+                <div class="hero min-h-screen" style={{ backgroundImage: `url(${banner1})`, height: '50vh' }}>
                     <div class="hero-overlay bg-opacity-60"></div>
                     <div class="hero-content text-center text-neutral-content">
                         <div class="max-w-md">
