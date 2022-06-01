@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     // handle errors react hook form
@@ -99,7 +100,7 @@ const Login = () => {
 
                         <input className='btn w-full max-w-xs text-white' type="submit" value='Login' />
                     </form>
-                    {/* <p><small>New to Doctors Portal? <Link to='' className='text-primary' >Create New Account</Link></small></p> */}
+                    <p><small>New to Doctors Portal? <Link to='/register' className='text-primary' >Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue With Google</button>
                 </div>
