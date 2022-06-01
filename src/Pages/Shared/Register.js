@@ -1,8 +1,9 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from './Loading';
 
 const Register = () => {
     // react firebase hooks
@@ -20,6 +21,14 @@ const Register = () => {
 
     const navigate = useNavigate();
     let signInError;
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || '/';
+
+    // redirect to login page problem
+    if (loading || gLoading || updating) {
+        return <Loading></Loading>
+    }
 
     // error
     if (error || gError || updateError) {

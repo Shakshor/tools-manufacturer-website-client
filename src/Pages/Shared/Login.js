@@ -2,7 +2,10 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import Loading from './Loading';
+
+
 
 const Login = () => {
     // handle errors react hook form
@@ -15,10 +18,16 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const location = useLocation();
 
+    let from = location.state?.from?.pathname || '/';
     let signInError;
+
+    // loading problem
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
 
     // check user
     if (user) {
