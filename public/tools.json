@@ -5,8 +5,8 @@
         "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
         "description": "lorem orm orm orm orm orrrr",
         "price": 200,
-        "Quantity": 2,
-        "avialable": 2
+        "quantity": 2,
+        "avilable": 2
     },
     {
         "_id": "629657712acfe1a02eb9f106",
@@ -14,8 +14,8 @@
         "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
         "description": "lorem orm orm orm orm orrrr",
         "price": 200,
-        "Quantity": 2,
-        "avialable": 2
+        "quantity": 2,
+        "avilable": 2
     },
     {
         "_id": "629657710da30f4d33b923ec",
@@ -23,8 +23,8 @@
         "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
         "description": "lorem orm orm orm orm orrrr",
         "price": 200,
-        "Quantity": 2,
-        "avialable": 2
+        "quantity": 2,
+        "avilable": 2
     },
     {
         "_id": "62965771a7b534859bc767c1",
@@ -32,8 +32,8 @@
         "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
         "description": "lorem orm orm orm orm orrrr",
         "price": 200,
-        "Quantity": 2,
-        "avialable": 2
+        "quantity": 2,
+        "avilable": 2
     },
     {
         "_id": "62965771a925e34fd9495de3",
@@ -41,8 +41,8 @@
         "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
         "description": "lorem orm orm orm orm orrrr",
         "price": 200,
-        "Quantity": 2,
-        "avialable": 2
+        "quantity": 2,
+        "avilable": 2
     },
     {
         "_id": "62965771bf52b01c3ee7842d",
@@ -50,7 +50,7 @@
         "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
         "description": "lorem orm orm orm orm orrrr",
         "price": 200,
-        "Quantity": 2,
-        "avialable": 2
+        "quantity": 2,
+        "avilable": 2
     }
 ]
