@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Login from '../Shared/Login';
 
 const menuItems = <>
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/blogs'>Blogs</Link></li>
     <li><Link to='/purchase/:productId'>Purchase</Link></li>
+    <li><Link to='/login'>Login</Link></li>
     {/* <li><Link>Item 1</Link></li> */}
 </>
 

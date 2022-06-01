@@ -4,6 +4,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import Header from './Pages/Home/Header';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Home/Purchase';
+import Login from './Pages/Shared/Login';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="blogs" element={<Blogs></Blogs>} />
         <Route path="/purchase/:productId" element={<Purchase></Purchase>} />
+        <Route path="login" element={<Login></Login>} />
       </Routes>
     </div>
   );
