@@ -11,7 +11,7 @@ const RequireAuth = ({ children }) => {
 
     // redirect to login page problem
     if (loading) {
-        return <Loading></Loading>
+        return <Loading></Loading>;
     }
 
     if (!user) {
