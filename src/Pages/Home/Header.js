@@ -21,12 +21,14 @@ const Header = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         <li><Link to='/purchase/:productId'>Purchase</Link></li>
-        {/* <li><Link>Item 1</Link></li> */}
+        {
+            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        }
         <li>{user ? <button className="btn btn-ghost" onClick={logout}>Sign Out</button> : <Link to="/login">Login</Link>}</li>
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-300 rounded-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabindex="0" className="btn btn-ghost lg:hidden">
@@ -36,12 +38,15 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-2xl"><span className=' text-blue-700'>S</span>TOOLS</a>
+                <Link to='/' className="btn btn-ghost normal-case text-2xl"><span className=' text-blue-700'>S</span>TOOLS</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
+            </div>
+            <div className='navbar-end'>
+                <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open Sidebar</label>
             </div>
         </div>
     );
