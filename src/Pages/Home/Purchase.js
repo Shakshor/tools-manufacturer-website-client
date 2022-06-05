@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const Purchase = () => {
     // react firebase hooks
@@ -61,7 +62,10 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
+                if (data) {
+                    toast('Your order is completed')
+                }
             })
 
     }
