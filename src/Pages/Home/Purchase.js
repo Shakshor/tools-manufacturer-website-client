@@ -6,11 +6,14 @@ import auth from '../../firebase.init';
 const Purchase = () => {
     // react firebase hooks
     const [user] = useAuthState(auth);
+
     const { productId } = useParams();
     const [tool, setTool] = useState({});
 
     const { _id, name, img, description, quantity, available, price } = tool;
     // console.log(tool);
+
+    // for single product loading
     useEffect(() => {
         const url = `http://localhost:5000/product/${productId}`;
         fetch(url)
@@ -42,12 +45,24 @@ const Purchase = () => {
         const order = {
             orderId: _id,
             order: name,
-            Quantity: orderQuantity,
+            Quantity: parseInt(orderQuantity),
             user: user.email,
             userName: user.displayName,
             phoneNumber,
             address,
         }
+
+        fetch(`http://localhost:5000/orders`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
 
     }
 
