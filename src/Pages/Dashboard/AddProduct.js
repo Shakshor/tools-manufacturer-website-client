@@ -1,34 +1,24 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
+    const { register, handleSubmit } = useForm();
 
-    const handleOrder = event => {
-        event.preventDefault();
+    const onSubmit = data => {
+        // console.log(data);
 
-        const name = event.target.name.value;
-        const quantity = event.target.quantity.value;
-        const price = event.target.price.value;
-        const image = event.target.image.value;
-
-        // send the data to the server
-        const order = {
-            name,
-            quantity,
-            price,
-            image
-        }
         const url = `http://localhost:5000/product`;
         fetch(url, {
             method: 'POST',
-            body: JSON.stringify(order),
+            body: JSON.stringify(data),
             headers: {
                 'Content-type': 'application/json',
             },
         })
             .then((response) => response.json())
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 if (result.insertedId) {
                     toast('adding a new item successful.');
                 }
@@ -37,42 +27,51 @@ const AddProduct = () => {
     }
 
     return (
-        <div className='mx-auto ml-20'>
-            <h2 className='text-xl font-semibold text-blue-600'>Add Product</h2>
-            <form onSubmit={handleOrder}>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Product</span>
+        <div className='mx-auto'>
+            <h2 className='text-lg text-blue-600 ml-10'>Add Product</h2>
+            <form className='flex flex-column ml-9' onSubmit={handleSubmit(onSubmit)}>
+                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div class="card-body">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                            <input type="text" placeholder="Product Name" class="input input-bordered"  {...register("name", { required: true, maxLength: 20 })} />
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Quantity</span>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Quantity</span>
                             </label>
-                            <input type="text" name='quantity' placeholder="quantity" className="input input-bordered" required />
+                            <input placeholder="Minimum Quantity To Buy" class="input input-bordered" type="number" {...register("quantity", { required: true })} />
+
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Price</span>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Available</span>
                             </label>
-                            <input type="text" name='price' placeholder="price" className="input input-bordered" required />
+                            <input placeholder="Available Product" class="input input-bordered" type="number" {...register("available", { required: true })} />
+
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Image</span>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Price</span>
                             </label>
-                            <input type="text" name='image' placeholder="image url" className="input input-bordered" required />
+                            <input placeholder="price" class="input input-bordered" type="number" {...register("price", { required: true })} />
+
                         </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Add product</button>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Image</span>
+                            </label>
+                            <input class="input input-bordered" placeholder='Photo URL' type="text" {...register("img")} />
+                        </div>
+                        <div class="form-control mt-6">
+                            <button class="btn btn-primary">Add Product</button>
                         </div>
                     </div>
                 </div>
             </form>
-        </div>
+        </div >
     );
 };
 
