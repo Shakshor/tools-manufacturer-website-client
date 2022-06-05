@@ -18,7 +18,18 @@ const MyOrders = () => {
 
     // deleting the product
     const handleDelete = id => {
-
+        const proceed = window.confirm('Are You Sure?')
+        if (proceed) {
+            fetch(`http://localhost:5000/orders/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remainingOrders = orders.filter(order => order.orderId !== id);
+                    setOrders(remainingOrders);
+                });
+        }
     }
 
 
