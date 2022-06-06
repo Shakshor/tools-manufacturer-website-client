@@ -13,7 +13,6 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import AddReview from './Pages/Dashboard/AddReview';
-import AddOrder from './Pages/Dashboard/AddProduct';
 import AddProduct from './Pages/Dashboard/AddProduct';
 
 

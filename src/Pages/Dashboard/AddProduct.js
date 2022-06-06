@@ -27,16 +27,22 @@ const AddProduct = () => {
     }
 
     return (
-        <div className='mx-auto'>
+        <div className='mx-auto '>
             <h2 className='text-lg text-blue-600 ml-10'>Add Product</h2>
             <form className='flex flex-column ml-9' onSubmit={handleSubmit(onSubmit)}>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div class="card flex-shrink-0  w-full max-w-lg   shadow-2xl bg-base-100">
                     <div class="card-body">
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Name</span>
                             </label>
                             <input type="text" placeholder="Product Name" class="input input-bordered"  {...register("name", { required: true, maxLength: 20 })} />
+                        </div>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Description</span>
+                            </label>
+                            <textarea type="text" cols="4" placeholder="Product Description" class="input input-bordered"  {...register("description", { required: true })} />
                         </div>
                         <div class="form-control">
                             <label class="label">
