@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const MyProfile = () => {
     // react firebase hooks
@@ -81,6 +82,14 @@ const MyProfile = () => {
                     </div>
                 </div>
             </form>
+            <h2 className='text-xl mt-10 text-blue-600 ml-10'>My Project Links</h2>
+            <div className='ml-10 py-5'>
+                <ul>
+                    <li><a className="link link-hover link-primary" href='https://product-analysis-website-shakshor.netlify.app/'>Product-Analysis-Website</a><br></br></li>
+                    <li><a className="link link-hover link-primary" href='https://independent-sports-photography.web.app/'>Independent-Sports-Photography</a><br></br></li>
+                    {/* <a className="link link-hover" href='https://product-analysis-website-shakshor.netlify.app/'>Tools Manufacturer</a> */}
+                </ul>
+            </div>
         </div >
     );
 };
