@@ -14,6 +14,7 @@ const AddProduct = () => {
             body: JSON.stringify(data),
             headers: {
                 'Content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
         })
             .then((response) => response.json())

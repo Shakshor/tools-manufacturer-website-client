@@ -41,7 +41,8 @@ const Register = () => {
     //  check user ,gUser, token
     if (token) {
         // console.log(user || gUser);
-        navigate('/login');
+        // navigate('/login');
+        navigate(from, { replace: true });
     }
 
     // form submit handler

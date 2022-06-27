@@ -77,7 +77,7 @@ const MyOrders = () => {
                                 <td>{order.order}</td>
                                 <td>{order.Quantity}</td>
                                 <td>{order.address}</td>
-                                <td><button className='btn btn-primary' onClick={() => handleDelete(order.orderId)}>Delete</button></td>
+                                <td><button className='btn btn-xs btn-error' onClick={() => handleDelete(order.orderId)}>Delete</button></td>
                             </tr>)
                         }
                     </tbody>
