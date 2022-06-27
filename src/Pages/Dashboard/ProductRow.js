@@ -1,26 +1,10 @@
 import React from 'react';
-import { toast } from 'react-toastify';
 
-const ProductRow = ({ product, index, refetch }) => {
-    const { _id, name, img, available } = product;
 
-    // event handler for delete
-    const handleDelete = id => {
-        fetch(`http://localhost:5000/product/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                if (data.deletedCount > 0) {
-                    toast.success(`Product ${name} is deleted`);
-                    refetch();
-                }
-            })
-    }
+const ProductRow = ({ product, index, refetch, setDeletingProduct }) => {
+    const { name, img, available } = product;
+
+
 
     return (
         <tr>
@@ -35,7 +19,7 @@ const ProductRow = ({ product, index, refetch }) => {
             <td>{name}</td>
             <td>{available}</td>
             <td>
-                <button onClick={() => handleDelete(_id)} className='btn btn-xs btn-error'>Delete</button>
+                <label onClick={() => setDeletingProduct(product)} for="product-delete-modal" class="btn btn-xs btn-error">Delete</label>
             </td>
         </tr>
     );

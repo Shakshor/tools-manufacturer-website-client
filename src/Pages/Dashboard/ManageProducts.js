@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import ProductDeleteModal from './ProductDeleteModal';
 import ProductRow from './ProductRow';
 
 const ManageProducts = () => {
+    // opening modal state
+    const [deletingProduct, setDeletingProduct] = useState(null);
+
     // using react query to load the products
     const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/product')
         .then(res => res.json()));
 
+    // query loading  
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -29,11 +34,17 @@ const ManageProducts = () => {
                     <tbody>
                         {/* ----- product info ------ */}
                         {
-                            products.map((product, index) => <ProductRow product={product} key={product._id} refetch={refetch} index={index}></ProductRow>)
+                            products.map((product, index) => <ProductRow product={product} key={product._id} refetch={refetch} index={index} setDeletingProduct={setDeletingProduct}></ProductRow>)
                         }
                     </tbody>
                 </table>
             </div>
+
+            {/* ------- Product Delete Modal Opening -------*/}
+            {
+                deletingProduct && <ProductDeleteModal deletingProduct={deletingProduct} refetch={refetch} setDeletingProduct={setDeletingProduct} ></ProductDeleteModal>
+            }
+
         </div>
     );
 };
