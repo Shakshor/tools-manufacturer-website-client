@@ -51,6 +51,7 @@ const Purchase = () => {
             userName: user.displayName,
             phoneNumber,
             address,
+            price,
         }
 
         fetch(`http://localhost:5000/orders`, {

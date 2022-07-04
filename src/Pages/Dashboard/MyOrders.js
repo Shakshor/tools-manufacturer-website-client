@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 
@@ -22,7 +22,7 @@ const MyOrders = () => {
                 }
             })
                 .then(res => {
-                    console.log('res', res);
+                    // console.log('res', res);
                     if (res.status === 401 || res.status === 403) {
                         // navigate to home
                         signOut(auth);
@@ -32,6 +32,7 @@ const MyOrders = () => {
                     return res.json();
                 })
                 .then(data => {
+                    // console.log(data);
                     setOrders(data)
                 })
         }
@@ -47,7 +48,7 @@ const MyOrders = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     const remainingOrders = orders.filter(order => order.orderId !== id);
                     setOrders(remainingOrders);
                 });
@@ -59,7 +60,7 @@ const MyOrders = () => {
         <div>
             <h2 className='text-xl text-blue-600'>My Orders:{orders.length}</h2>
             <div class="overflow-x-auto">
-                <table class="table w-full">
+                <table class="table w- lg:max-w-md">
                     <thead>
                         <tr>
                             <th></th>
@@ -67,6 +68,8 @@ const MyOrders = () => {
                             <th>Order Name</th>
                             <th>Quantity</th>
                             <th>Location</th>
+                            <th>Payment</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -77,6 +80,11 @@ const MyOrders = () => {
                                 <td>{order.order}</td>
                                 <td>{order.Quantity}</td>
                                 <td>{order.address}</td>
+                                <td>
+                                    {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success' >Pay</button></Link>}
+                                    {(order.price && order.paid) && <span className='text-success'>paid</span>}
+
+                                </td>
                                 <td><button className='btn btn-xs btn-error' onClick={() => handleDelete(order.orderId)}>Delete</button></td>
                             </tr>)
                         }

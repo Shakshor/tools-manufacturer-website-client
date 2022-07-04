@@ -17,6 +17,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Pages/Shared/RequireAdmin';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
+import Payment from './Pages/Dashboard/Payment';
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route index element={<MyOrders></MyOrders>} ></Route>
           <Route path='profile' element={<MyProfile></MyProfile>} ></Route>
           <Route path='review' element={<AddReview></AddReview>} ></Route>
+          <Route path='payment/:id' element={<Payment></Payment>} ></Route>
           <Route path='addOrder' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} ></Route>
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>} ></Route>
           <Route path='manageProducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>} ></Route>
