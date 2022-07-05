@@ -16,7 +16,7 @@ const Purchase = () => {
 
     // for single product loading
     useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://stools-manufacturer.herokuapp.com/product/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data));
@@ -54,7 +54,7 @@ const Purchase = () => {
             price,
         }
 
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://stools-manufacturer.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

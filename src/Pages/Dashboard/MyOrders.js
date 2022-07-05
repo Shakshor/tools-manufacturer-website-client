@@ -15,7 +15,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/orders?user=${user.email}`, {
+            fetch(`https://stools-manufacturer.herokuapp.com/orders?user=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -43,7 +43,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are You Sure?')
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://stools-manufacturer.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -74,7 +74,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <tr>
+                            orders.map((order, index) => <tr key={order._id}>
                                 <th>{index + 1}</th>
                                 <td>{order.userName}</td>
                                 <td>{order.order}</td>
@@ -82,10 +82,17 @@ const MyOrders = () => {
                                 <td>{order.address}</td>
                                 <td>
                                     {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success' >Pay</button></Link>}
-                                    {(order.price && order.paid) && <span className='text-success'>paid</span>}
+                                    {(order.price && order.paid) && <div>
+                                        <p><span className='text-success'>Paid</span></p>
+                                        <p>Transaction Id: <span className='text-success'>{order.transactionId}</span></p>
+                                    </div>}
 
                                 </td>
-                                <td><button className='btn btn-xs btn-error' onClick={() => handleDelete(order.orderId)}>Delete</button></td>
+                                <td>
+                                    {
+                                        !order.paid && <button className='btn btn-xs btn-error' onClick={() => handleDelete(order.orderId)}>Delete</button>
+                                    }
+                                </td>
                             </tr>)
                         }
                     </tbody>

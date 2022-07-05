@@ -46,7 +46,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className='navbar-end'>
-                <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Dashboard Sidebar</label>
+                <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Sidebar</label>
             </div>
         </div>
     );

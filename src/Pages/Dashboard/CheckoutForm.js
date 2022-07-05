@@ -14,14 +14,16 @@ const CheckoutForm = ({ order }) => {
     const [success, setSuccess] = useState('');
     // transaction id
     const [transactionId, setTransactionId] = useState('');
+    // spinner as processing state
+    const [processing, setProcessing] = useState(false);
 
-    const { price, Quantity, user, userName } = order;
+    const { _id, price, Quantity, user, userName } = order;
     const totalPrice = price * Quantity;
 
 
     // fetch the paymentIntent
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://stools-manufacturer.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -73,7 +75,7 @@ const CheckoutForm = ({ order }) => {
         -----------------------------------*/
 
         setSuccess(''); // ( Initially success is empty string)
-
+        setProcessing(true);
         // confirm card payment
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
@@ -91,12 +93,33 @@ const CheckoutForm = ({ order }) => {
         // payment intentError check
         if (intentError) {
             setCardError(intentError?.message);
+            setProcessing(false);
         }
         else {
             setCardError('');
             setTransactionId(paymentIntent.id);
             console.log(paymentIntent);
             setSuccess('Congratulations! Your payment is completed')
+
+
+            // update the order & store payment on database
+            const payment = {
+                order: _id,
+                transactionId: paymentIntent.id,
+            }
+            fetch(`https://stools-manufacturer.herokuapp.com/orders/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    setProcessing(false);
+                    console.log(data);
+                })
         }
 
 
@@ -121,7 +144,7 @@ const CheckoutForm = ({ order }) => {
                         },
                     }}
                 />
-                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret || success}>
                     Pay
                 </button>
             </form>

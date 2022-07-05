@@ -9,7 +9,7 @@ const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
 
     // using react query to load the products
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/product')
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://stools-manufacturer.herokuapp.com/product')
         .then(res => res.json()));
 
     // query loading  
