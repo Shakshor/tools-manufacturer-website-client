@@ -30,7 +30,7 @@ const ProductDeleteModal = ({ deletingProduct, refetch, setDeletingProduct }) =>
             <input type="checkbox" id="product-delete-modal" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
-                    <h3 class="font-bold text-lg text-red-600">Are you sure want to delete ${name}!</h3>
+                    <h3 class="font-bold text-lg text-red-600">Are you sure want to delete <span className='text-blue-400'>{name}</span> ?</h3>
                     <div class="modal-action">
                         <button onClick={() => handleDelete(_id)} className='btn btn-xs btn-error'>Delete</button>
                         <label for="product-delete-modal" class="btn btn-xs">cancel</label>

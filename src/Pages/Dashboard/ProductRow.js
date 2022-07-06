@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ProductRow = ({ product, index, refetch, setDeletingProduct }) => {
+const ProductRow = ({ product, index, setDeletingProduct }) => {
     const { name, img, available } = product;
 
 

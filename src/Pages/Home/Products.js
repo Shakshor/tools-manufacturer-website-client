@@ -10,6 +10,8 @@ const Products = () => {
             .then(data => setProducts(data))
     }, [])
 
+
+
     return (
         <div>
             <h2 className='text-2xl text-center text-blue-900 font-bold py-5'>Featured Products:{products.length}</h2>

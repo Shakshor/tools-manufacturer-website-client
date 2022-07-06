@@ -21,7 +21,7 @@ const Product = ({ product }) => {
                 <p >Quantity:{quantity}</p>
                 <p >Available:{available}</p>
                 <div class="card-actions">
-                    <button class="btn btn-primary" onClick={() => navigateToPurchase(_id)}>Purchase</button>
+                    <button class="btn btn-wide btn-primary" onClick={() => navigateToPurchase(_id)}>Purchase</button>
                 </div>
             </div>
         </div>
