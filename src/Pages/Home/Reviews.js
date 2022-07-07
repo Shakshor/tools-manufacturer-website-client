@@ -11,6 +11,7 @@ const Reviews = () => {
         fetch('http://localhost:5000/review')
             .then(res => res.json())
             .then(data => {
+                // console.log(data);
                 const reviewData = expended ? data : data.slice(0, 3);
                 setReviews(reviewData);
             });
@@ -24,11 +25,11 @@ const Reviews = () => {
             <h2 className='text-lg'>{reviews.length}</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5'>
                 {
-                    reviews.map(review => <Review review={review}></Review>)
+                    reviews.map(review => <Review review={review} key={review._id} ></Review>)
                 }
             </div>
-            <div className='text-center my-5 pb-5'>
-                <button onClick={() => setExpended(!expended)} className="btn btn-wide">
+            <div className='text-center  pb-5'>
+                <button onClick={() => setExpended(!expended)} className="btn btn-wide btn-ghost text-lg font-semibold">
                     {
                         expended ? 'show less..' : 'show more..'
                     }

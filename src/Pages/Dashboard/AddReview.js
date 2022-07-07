@@ -17,7 +17,7 @@ const AddReview = () => {
     const handleSubmit = () => {
         // console.log(text);
 
-        // post review object to the database 
+        // POST review object to the database 
         const review = {
             ratings: rating,
             review: text,

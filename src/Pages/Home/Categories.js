@@ -1,6 +1,6 @@
 import React from 'react';
 import Category from './Category';
-import cat1 from '../../../src/images/categories/cat-1.jpg'
+import cat1 from '../../assets/images/categories/cat-1.jpg';
 
 const Categories = () => {
     return (
