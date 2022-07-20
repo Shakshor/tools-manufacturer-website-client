@@ -58,7 +58,7 @@ const Login = () => {
                     <h2 className="text-center text-xl font-bold">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                        {/* ---- input design ----- */}
+                        {/* ---- input fields ----- */}
                         {/* --- email input field ------ */}
                         <div className="form-control w-full max-w-xs">
                             <label className="label">

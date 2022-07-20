@@ -32,7 +32,7 @@ const Projects = () => {
                     </div>
                 </div>
                 {/* --------- project-3 --------------- */}
-                <div class="card  lg:max-w-xl  bg-base-100 shadow-xl image-full rounded-none">
+                <div class="card  lg:max-w-xl  bg-base-100 shadow-xl image-full">
                     <figure><img className='w-full' src={project3} alt="" /></figure>
                     <div class="card-body flex justify-center items-center">
                         <div>
