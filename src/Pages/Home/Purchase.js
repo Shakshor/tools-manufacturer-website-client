@@ -16,7 +16,7 @@ const Purchase = () => {
 
     // for single product loading
     useEffect(() => {
-        const url = `https://stools-manufacturer.herokuapp.com/product/${productId}`;
+        const url = `http://localhost:5000/product/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data));
@@ -28,9 +28,9 @@ const Purchase = () => {
     }
 
     // quantity of order
-    const handleChange = event => {
-        const orderQuantity = event.target.value;
-    };
+    // const handleChange = event => {
+    //     const orderQuantity = event.target.value;
+    // };
 
     // 
     const handleOrder = event => {
@@ -52,9 +52,10 @@ const Purchase = () => {
             phoneNumber,
             address,
             price,
+            img: img,
         }
 
-        fetch(`https://stools-manufacturer.herokuapp.com/orders`, {
+        fetch(`http://localhost:5000/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -65,7 +66,8 @@ const Purchase = () => {
             .then(data => {
                 // console.log(data);
                 if (data) {
-                    toast('Your order is completed')
+                    toast('Your order is completed');
+                    event.target.reset();
                 }
             })
 
@@ -98,6 +100,7 @@ const Purchase = () => {
                     <input type="email" value={user?.email} name='email' placeholder="Name" className="input input-bordered input-primary w-full max-w-lg my-2 text-base" required readOnly disabled />
                     <input type="text" value={user?.displayName} name='name' placeholder="Name" className="input input-bordered input-primary w-full max-w-lg my-2 text-base" required readOnly disabled />
 
+                    {/* ------------ Address ---------------- */}
                     <div class="form-control w-full max-w-lg">
                         <label class="label">
                             <span class="label-text text-lg text-primary">Address</span>
@@ -105,6 +108,7 @@ const Purchase = () => {
                         <input type="text" name='address' placeholder="Address" className="input input-bordered input-primary w-full max-w-lg my-2 text-base" required />
                     </div>
 
+                    {/* ------------ Phone ---------------- */}
                     <div class="form-control w-full max-w-lg">
                         <label class="label">
                             <span class="label-text text-lg text-primary">Phone</span>
@@ -112,11 +116,12 @@ const Purchase = () => {
                         <input type="text" name='phone' placeholder="Phone Number" className="input input-bordered input-primary w-full max-w-lg my-2 text-base" required />
                     </div>
 
+                    {/* ------------ Quantity ---------------- */}
                     <div class="form-control w-full max-w-lg">
                         <label class="label">
                             <span class="label-text text-lg text-primary">Order Quantity</span>
                         </label>
-                        <input defaultValue={quantity} name='quantity' type="number" min={quantity} max={available} onChange={handleChange} className="input input-bordered input-primary text-center text-xl" placeholder={quantity} required />
+                        <input defaultValue={quantity} name='quantity' type="number" min={quantity} max={available} className="input input-bordered input-primary text-center text-xl" placeholder={quantity} required />
                     </div>
 
                     <div className='text-center'>

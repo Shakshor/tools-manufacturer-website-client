@@ -23,7 +23,7 @@ const CheckoutForm = ({ order }) => {
 
     // fetch the paymentIntent
     useEffect(() => {
-        fetch('https://stools-manufacturer.herokuapp.com/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -106,8 +106,9 @@ const CheckoutForm = ({ order }) => {
             const payment = {
                 order: _id,
                 transactionId: paymentIntent.id,
+                status: "pending",
             }
-            fetch(`https://stools-manufacturer.herokuapp.com/orders/${_id}`, {
+            fetch(`http://localhost:5000/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

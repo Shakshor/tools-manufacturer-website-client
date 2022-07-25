@@ -7,7 +7,7 @@ const ProductDeleteModal = ({ deletingProduct, refetch, setDeletingProduct }) =>
 
     // event handler for delete
     const handleDelete = id => {
-        fetch(`https://stools-manufacturer.herokuapp.com/product/${id}`, {
+        fetch(`http://localhost:5000/product/${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

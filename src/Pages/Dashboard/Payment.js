@@ -14,7 +14,7 @@ const Payment = () => {
     const { id } = useParams();
 
     // using react query to load specific order
-    const url = `https://stools-manufacturer.herokuapp.com/orders/${id}`;
+    const url = `http://localhost:5000/orders/${id}`;
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {

@@ -20,12 +20,14 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import Payment from './Pages/Dashboard/Payment';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
+import Footer from './Pages/Shared/Footer';
+import NotFound from './Pages/Shared/NotFound';
 
 
 
 function App() {
   return (
-    <div className='max-w-7xl mx-auto px-12'>
+    <div className='max-w-7xl mx-auto px-12 tools-section'>
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -52,7 +54,9 @@ function App() {
         <Route path='myPortfolio' element={<MyPortfolio></MyPortfolio>} ></Route>
         <Route path="login" element={<Login></Login>} />
         <Route path="register" element={<Register></Register>} />
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
   );
