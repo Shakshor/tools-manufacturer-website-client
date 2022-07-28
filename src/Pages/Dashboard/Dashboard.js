@@ -17,7 +17,7 @@ const Dashboard = () => {
 
 
     return (
-        <div class="drawer drawer-mobile h-full">
+        <div class="drawer drawer-mobile h-full ">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content">
                 {/* <!-- Page content here --> */}
@@ -27,7 +27,7 @@ const Dashboard = () => {
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 lg:bg-transparent text-base-content z-10">
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to='/dashboard'>MyProfile</Link></li>
                     {

@@ -1,13 +1,12 @@
 import React from 'react';
-import { BiFace } from 'react-icons/bi';
 
-const BusinessSummary = () => {
+const BusinessSummary = ({ img, number, title }) => {
     return (
         <div class="card lg:max-w-lg bg-base-100 flex justify-center items-center">
             <div class="card-body">
-                <h2 class="text-5xl"><BiFace></BiFace></h2>
-                <h2 className='text-2xl text-blue-900 font-bold'>100+</h2>
-                <p className='text-xl'>Customers</p>
+                <img src={img} className='w-20 h-20' alt='icon' />
+                <p className='text-2xl text-blue-900 font-bold'>{number}</p>
+                <p className='text-xl text-black'>{title}</p>
             </div>
         </div>
     );

@@ -2,55 +2,82 @@
     {
         "_id": "629657712f966b7056c66e81",
         "name": "Nail Guns",
-        "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
-        "description": "lorem orm orm orm orm orrrr",
-        "price": 200,
-        "quantity": 2,
-        "available": 2
+        "img": "https://i.ibb.co/qm7M0RW/img1.jpg",
+        "description": "drive nails into wood or other materials.It is usually driven by compressed air, electromagnetism, or propane",
+        "price": 2999,
+        "quantity": 1,
+        "available": 10
     },
     {
         "_id": "629657712acfe1a02eb9f106",
-        "name": "Nail Guns",
-        "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
-        "description": "lorem orm orm orm orm orrrr",
-        "price": 200,
-        "quantity": 2,
-        "available": 2
+        "name": "Carbide Saw",
+        "img": "https://i.ibb.co/25f6cv0/carbide-Saws.jpg",
+        "description": "Carbide saws are machine tools for cutting. The saw teeth are made of cemented carbide, so that hard materials can be cut.",
+        "price": 1630,
+        "quantity": 1,
+        "available": 6
     },
     {
         "_id": "629657710da30f4d33b923ec",
-        "name": "Nail Guns",
-        "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
-        "description": "lorem orm orm orm orm orrrr",
-        "price": 200,
+        "name": "Ripcut Saw",
+        "img": "https://i.ibb.co/0ymqNWk/ripcut-Saw.jpg",
+        "description": "A ripsaw  is a wood saw that is specially designed for making a rip cut, a cut made parallel to the direction of the wood grain.",
+        "price": 450,
         "quantity": 2,
-        "available": 2
+        "available": 20
     },
     {
         "_id": "62965771a7b534859bc767c1",
-        "name": "Nail Guns",
-        "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
-        "description": "lorem orm orm orm orm orrrr",
-        "price": 200,
-        "quantity": 2,
-        "available": 2
+        "name": "Hack Saw",
+        "img": "https://i.ibb.co/TbMH5Ky/hackSaw.jpg",
+        "description": "A hacksaw is a fine-toothed saw, originally and mainly made for cutting metal. The equivalent saw for cutting wood is usually called a bow saw",
+        "price": 720,
+        "quantity": 1,
+        "available": 15
     },
     {
         "_id": "62965771a925e34fd9495de3",
-        "name": "Nail Guns",
-        "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
-        "description": "lorem orm orm orm orm orrrr",
-        "price": 200,
+        "name": "Curved Chisel",
+        "img": "https://i.ibb.co/fHw5XgF/curved-Chisel.jpg",
+        "description": "Carving chisel for common woodcarving, suitable for those prefering tradition and style, and also for amateur woodcarvers.",
+        "price": 995,
+        "quantity": 1,
+        "available": 25
+    },
+    {
+        "_id": "62965771a925e34fd9495de3",
+        "name": "Skew Chisel",
+        "img": "https://i.ibb.co/ct9t92L/skew-Chisel.jpg",
+        "description": "Skew chisels are used for smoothing and cleaning the corners of dovetails, for precise paring and finishing of other kinds of wood joinery",
+        "price": 1500,
+        "quantity": 1,
+        "available": 10
+    },
+    {
+        "_id": "62965771a925e34fd9495de4",
+        "name": "WoodWork Router",
+        "img": "https://i.ibb.co/YXHCNy2/router2.jpg",
+        "description": "The router is a power tool with a flat base and a rotating blade extending past the base. The spindle may be driven by an electric motor.",
+        "price": 900,
+        "quantity": 1,
+        "available": 18
+    },
+    {
+        "_id": "62965771a925e34fd9495de5",
+        "name": "China Router",
+        "img": "https://i.ibb.co/PNKk1Dp/router3.jpg",
+        "description": "A router tool shapes edges, cuts mortises and holes and makes cutouts and grooves. Here's a list of router types and accessories.",
+        "price": 1200,
         "quantity": 2,
-        "available": 2
+        "available": 20
     },
     {
         "_id": "62965771bf52b01c3ee7842d",
-        "name": "Nail Guns",
-        "img": "https://i.ibb.co/cFWGb55/nailGuns.jpg",
-        "description": "lorem orm orm orm orm orrrr",
-        "price": 200,
-        "quantity": 2,
-        "available": 2
+        "name": "Chain Saw",
+        "img": "https://i.ibb.co/27qCPLh/chainsaw.jpg",
+        "description": "A chainsaw is a portable gasoline-, electric-, or battery-powered saw that cuts with a set of teeth attached to a rotating chain driven along a guide bar.",
+        "price": 12000,
+        "quantity": 1,
+        "available": 15
     }
 ]

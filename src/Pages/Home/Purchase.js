@@ -78,7 +78,7 @@ const Purchase = () => {
     return (
         <div className='max-w-lg mx-auto'>
             {/* --- product info ------- */}
-            <h2>Purchase the Item here:{productId}</h2>
+            {/* <h2>Purchase the Item here:{productId}</h2> */}
             <div className="card lg:max-w-lg  bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={img} alt="Shoes" className="rounded-xl" />

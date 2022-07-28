@@ -53,10 +53,6 @@ const SingleOrderRow = ({ order, index, refetch, setOrderDelete }) => {
             </td>
             <td>
                 {
-                    (order.paid && order.status) &&
-                    <p>{order.status === "pending" ? <span className='text-red-500'>pending</span> : <span className='text-success'>shipped</span>}</p>
-                }
-                {
                     (order.paid && order.status === "pending") &&
                     <button className='btn btn-info btn-xs' onClick={() => handleStatus(_id)} >Ship Now</button>
                 }

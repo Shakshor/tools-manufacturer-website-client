@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import StarRatings from './StarRatings';
 import { toast } from 'react-toastify';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
 const AddReview = () => {
+    // react firebase hook
+    const [user, loading, error] = useAuthState(auth);
     // ratings value
     const [rating, setRating] = useState(null);
     // text value state
     const [text, setText] = useState('');
+
 
     // textarea event handler
     const handleChange = event => {
@@ -17,8 +22,11 @@ const AddReview = () => {
     const handleSubmit = () => {
         // console.log(text);
 
+
         // POST review object to the database 
         const review = {
+            name: user.displayName,
+            img: user.photoURL,
             ratings: rating,
             review: text,
         }

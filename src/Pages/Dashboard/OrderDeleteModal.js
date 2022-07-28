@@ -24,7 +24,7 @@ const OrderDeleteModal = ({ orderDelete, setOrderDelete, refetch }) => {
     }
 
     return (
-        <div> <input type="checkbox" id="order-delete-modal" class="modal-toggle" />
+        <div> <input type="checkbox" id="order-delete-modal" class="modal-toggle z-20" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
                     <h3 class="font-bold text-lg">Hello! {userName}</h3>
