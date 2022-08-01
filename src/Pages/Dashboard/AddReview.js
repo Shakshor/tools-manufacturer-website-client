@@ -30,7 +30,7 @@ const AddReview = () => {
             ratings: rating,
             review: text,
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://stools-manufacturer.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -64,7 +64,7 @@ const AddReview = () => {
                 </textarea>
 
                 <button
-                    class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md"
+                    className="btn btn-xs sm:btn-sm md:btn-md lg:btn-md"
                     onClick={handleSubmit}
                 >Add Review</button>
             </div>

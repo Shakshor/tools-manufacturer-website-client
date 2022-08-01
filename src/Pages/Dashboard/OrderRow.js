@@ -25,11 +25,11 @@ const OrderRow = ({ order, index, setOrderDelete }) => {
             }</td>
             <td>
                 {
-                    !order.paid && <label for="order-delete-modal" onClick={setOrderDelete(order)} class="btn btn-xs btn-error">delete</label>
+                    !order.paid && <label htmlFor="order-delete-modal" onClick={setOrderDelete(order)} className="btn btn-xs btn-error">delete</label>
                 }
 
             </td>
-        </tr>
+        </tr >
     );
 };
 

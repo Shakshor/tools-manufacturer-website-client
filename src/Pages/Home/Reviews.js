@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import auth from '../../firebase.init';
 import Review from './Review';
 
 const Reviews = () => {
@@ -8,15 +10,15 @@ const Reviews = () => {
     const [expended, setExpended] = useState(false);
 
     // react firebase hook
-    /* const [user, loading, error] = useAuthState(auth);
-    
-    if (user) {
-        console.log(user);
-    } */
+    // const [user, loading, error] = useAuthState(auth);
+
+    // if (user) {
+    //     console.log(user);
+    // }
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://stools-manufacturer.herokuapp.com/review')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -34,11 +36,11 @@ const Reviews = () => {
                 }
             </div>
             <div className='text-center  pb-5'>
-                <button onClick={() => setExpended(!expended)} className="btn btn-wide btn-ghost text-lg font-semibold">
+                {expended && <button onClick={() => setExpended(!expended)} className="btn btn-wide btn-ghost text-lg font-semibold">
                     {
                         expended ? 'show less..' : 'show more..'
                     }
-                </button>
+                </button>}
             </div>
         </div>
 

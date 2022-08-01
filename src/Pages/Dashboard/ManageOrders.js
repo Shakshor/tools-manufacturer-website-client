@@ -10,7 +10,7 @@ const ManageOrders = () => {
     const [orderDelete, setOrderDelete] = useState(null);
 
     // use react query
-    const { data: AllOrders, isLoading, refetch } = useQuery('AllOrders', () => fetch(`http://localhost:5000/allOrders`, {
+    const { data: AllOrders, isLoading, refetch } = useQuery('AllOrders', () => fetch(`https://stools-manufacturer.herokuapp.com/allOrders`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,9 +23,9 @@ const ManageOrders = () => {
 
     return (
         <div>
-            <h2 className="text-xl">Manage Orders.{AllOrders.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            {/* <h2 className="text-xl">Manage Orders.{AllOrders.length}</h2> */}
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

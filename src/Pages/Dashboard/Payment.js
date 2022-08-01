@@ -14,7 +14,7 @@ const Payment = () => {
     const { id } = useParams();
 
     // using react query to load specific order
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://stools-manufacturer.herokuapp.com/orders/${id}`;
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {
@@ -32,18 +32,18 @@ const Payment = () => {
             <h1 className='text-xl mt-2 ml-5 text-violet-900 font-semibold'>Payment Page</h1>
 
             {/* -------- order details info --------*/}
-            <div class="card w-50 max-w-md bg-base-100 shadow-xl">
-                <div class="card-body">
+            <div className="card w-50 max-w-md bg-base-100 shadow-xl">
+                <div className="card-body">
                     <p className='text-purple-600 text-xl'>Hello! {order.userName}</p>
-                    <h2 class="card-title">Please Pay For <span className='text-purple-600'>{order.order}</span></h2>
+                    <h2 className="card-title">Please Pay For <span className='text-purple-600'>{order.order}</span></h2>
                     <p className='text-purple-600 text-lg'>Quantity: {order.Quantity}</p>
                     <p className='text-purple-600 font-bold text-lg'>Please pay: ${order.price * order.Quantity}</p>
                 </div>
             </div>
 
             {/* -------- payment method info --------*/}
-            <div class="card w-50 max-w-md bg-base-100 shadow-xl my-10">
-                <div class="card-body">
+            <div className="card w-50 max-w-md bg-base-100 shadow-xl my-10">
+                <div className="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm order={order} />
                     </Elements>

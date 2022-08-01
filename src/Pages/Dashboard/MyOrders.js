@@ -18,7 +18,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
     // using React Query
-    const { data: orders, isLoading, refetch } = useQuery(['orders', user], () => fetch(`http://localhost:5000/orders?user=${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery(['orders', user], () => fetch(`https://stools-manufacturer.herokuapp.com/orders?user=${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -42,9 +42,9 @@ const MyOrders = () => {
 
     return (
         <div className='mb-7'>
-            <h2 className='text-xl text-blue-600'>My Orders:{orders.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            {/* <h2 className='text-xl text-blue-600'>My Orders:{orders.length}</h2> */}
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

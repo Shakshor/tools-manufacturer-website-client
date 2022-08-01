@@ -7,7 +7,7 @@ const ProductDeleteModal = ({ deletingProduct, refetch, setDeletingProduct }) =>
 
     // event handler for delete
     const handleDelete = id => {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://stools-manufacturer.herokuapp.com/product/${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -27,13 +27,13 @@ const ProductDeleteModal = ({ deletingProduct, refetch, setDeletingProduct }) =>
 
     return (
         <div>
-            <input type="checkbox" id="product-delete-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg text-red-600">Are you sure want to delete <span className='text-blue-400'>{name}</span> ?</h3>
-                    <div class="modal-action">
+            <input type="checkbox" id="product-delete-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg text-red-600">Are you sure want to delete <span className='text-blue-400'>{name}</span> ?</h3>
+                    <div className="modal-action">
                         <button onClick={() => handleDelete(_id)} className='btn btn-xs btn-error'>Delete</button>
-                        <label for="product-delete-modal" class="btn btn-xs">cancel</label>
+                        <label htmlFor="product-delete-modal" className="btn btn-xs">cancel</label>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ const AddProduct = () => {
 
 
     // react query
-    const { data: tools, isLoading } = useQuery('tools', () => fetch(`http://localhost:5000/product`).then(res => res.json))
+    const { data: tools, isLoading } = useQuery('tools', () => fetch(`https://stools-manufacturer.herokuapp.com/product`).then(res => res.json))
 
 
     // third party: imgbb api key
@@ -47,7 +47,7 @@ const AddProduct = () => {
                     }
 
                     //send to database
-                    fetch(`http://localhost:5000/product`, {
+                    fetch(`https://stools-manufacturer.herokuapp.com/product`, {
                         method: 'POST',
                         body: JSON.stringify(product),
                         headers: {
@@ -82,15 +82,15 @@ const AddProduct = () => {
         <div className=''>
             <h2 className='text-lg text-blue-600 ml-10'>Add Product</h2>
             <form className='flex flex-column ml-9' onSubmit={handleSubmit(onSubmit)}>
-                <div class="card flex-shrink-0  w-full max-w-lg   shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0  w-full max-w-lg   shadow-2xl bg-base-100">
+                    <div className="card-body">
 
                         {/* --------- Name ------------------ */}
-                        <div class="form-control w-full max-w-lg">
-                            <label class="label">
-                                <span class="label-text">Name</span>
+                        <div className="form-control w-full max-w-lg">
+                            <label className="label">
+                                <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="Product Name" class="input input-bordered "  {...register("name", {
+                            <input type="text" placeholder="Product Name" className="input input-bordered "  {...register("name", {
                                 required: {
                                     value: true,
                                     message: 'Product description required'
@@ -102,18 +102,18 @@ const AddProduct = () => {
                             })} />
 
                             {/* ---------- error message ---------- */}
-                            <label class="label">
-                                {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name?.message}</span>}
-                                {errors.name?.type === 'maxLength' && <span class="label-text-alt text-red-500">{errors.name?.message}</span>}
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name?.message}</span>}
+                                {errors.name?.type === 'maxLength' && <span className="label-text-alt text-red-500">{errors.name?.message}</span>}
                             </label>
                         </div>
 
                         {/* ----------- Description ------------ */}
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Description</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Description</span>
                             </label>
-                            <textarea type="text" cols="4" placeholder="Product Description" class="input input-bordered"  {...register("description", {
+                            <textarea type="text" cols="4" placeholder="Product Description" className="input input-bordered"  {...register("description", {
                                 required: {
                                     value: true,
                                     message: 'Product description required'
@@ -124,20 +124,20 @@ const AddProduct = () => {
                                 }
                             })} />
                             {/* ----- error message ---- */}
-                            <label class="label">
-                                {errors.description?.type === 'required' && <span class="label-text-alt text-red-500">{errors.description?.message}</span>}
+                            <label className="label">
+                                {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description?.message}</span>}
 
-                                {errors.description?.type === 'maxLength' && <span class="label-text-alt text-red-500">{errors.description?.message}</span>}
+                                {errors.description?.type === 'maxLength' && <span className="label-text-alt text-red-500">{errors.description?.message}</span>}
 
                             </label>
                         </div>
 
                         {/* ------------- Minimum Quantity -------------- */}
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Quantity</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Quantity</span>
                             </label>
-                            <input placeholder="Minimum Quantity To Buy" class="input input-bordered" type="number" {...register("quantity", {
+                            <input placeholder="Minimum Quantity To Buy" className="input input-bordered" type="number" {...register("quantity", {
                                 required: {
                                     value: true,
                                     message: 'Product minimum quantity required'
@@ -145,17 +145,17 @@ const AddProduct = () => {
                             })} />
 
                             {/* --- error message ---- */}
-                            <label class="label">
-                                {errors.quantity?.type === 'required' && <span class="label-text-alt text-red-500">{errors.quantity?.message}</span>}
+                            <label className="label">
+                                {errors.quantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.quantity?.message}</span>}
                             </label>
 
                         </div>
 
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Available</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Available</span>
                             </label>
-                            <input placeholder="Available Product" class="input input-bordered" type="number" {...register("available", {
+                            <input placeholder="Available Product" className="input input-bordered" type="number" {...register("available", {
                                 required: {
                                     value: true,
                                     message: 'Product available quantity required'
@@ -163,19 +163,19 @@ const AddProduct = () => {
                             })} />
 
                             {/* ----- error message ---- */}
-                            <label class="label">
-                                {errors.available?.type === 'required' && <span class="label-text-alt text-red-500">{errors.available?.message}</span>}
+                            <label className="label">
+                                {errors.available?.type === 'required' && <span className="label-text-alt text-red-500">{errors.available?.message}</span>}
                             </label>
 
                         </div>
 
 
                         {/* ----------- price ---------------- */}
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Price</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Price</span>
                             </label>
-                            <input placeholder="Price" class="input input-bordered" type="number" {...register("price", {
+                            <input placeholder="Price" className="input input-bordered" type="number" {...register("price", {
                                 required: {
                                     value: true,
                                     message: 'Product price required'
@@ -183,19 +183,19 @@ const AddProduct = () => {
                             })} />
 
                             {/* ---- error message ----*/}
-                            <label class="label">
-                                {errors.price?.type === 'required' && <span class="label-text-alt text-red-500">{errors.price?.message}</span>}
+                            <label className="label">
+                                {errors.price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.price?.message}</span>}
                             </label>
 
                         </div>
 
 
 
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Photo</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo</span>
                             </label>
-                            <input class="input input-bordered" type="file" {...register("img", {
+                            <input className="input input-bordered" type="file" {...register("img", {
                                 required: {
                                     value: true,
                                     message: 'image is required'
@@ -204,8 +204,8 @@ const AddProduct = () => {
                         </div>
 
 
-                        <div class="form-control mt-6">
-                            <button class="btn btn-primary">Add Product</button>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Add Product</button>
                         </div>
                     </div>
                 </div>

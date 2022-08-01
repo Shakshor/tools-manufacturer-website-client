@@ -6,7 +6,7 @@ const OrderDeleteModal = ({ orderDelete, setOrderDelete, refetch }) => {
 
     // deleting the specific order
     const handleDelete = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://stools-manufacturer.herokuapp.com/orders/${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -24,14 +24,14 @@ const OrderDeleteModal = ({ orderDelete, setOrderDelete, refetch }) => {
     }
 
     return (
-        <div> <input type="checkbox" id="order-delete-modal" class="modal-toggle z-20" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Hello! {userName}</h3>
-                    <h3 class="font-bold text-lg text-red-600">Are you sure want to delete <span className='text-blue-400'>{order}</span> order?</h3>
-                    <div class="modal-action">
+        <div> <input type="checkbox" id="order-delete-modal" className="modal-toggle z-20" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Hello! {userName}</h3>
+                    <h3 className="font-bold text-lg text-red-600">Are you sure want to delete <span className='text-blue-400'>{order}</span> order?</h3>
+                    <div className="modal-action">
                         <button className='btn btn-xs btn-error' onClick={() => handleDelete(_id)} >Delete</button>
-                        <label for="order-delete-modal" class="btn btn-xs">cancel</label>
+                        <label htmlFor="order-delete-modal" className="btn btn-xs">cancel</label>
                     </div>
                 </div>
             </div>

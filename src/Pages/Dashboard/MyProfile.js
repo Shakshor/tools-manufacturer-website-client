@@ -21,7 +21,7 @@ const MyProfile = () => {
         // console.log('inside useToken', user);
         const email = user?.email;
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://stools-manufacturer.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -46,38 +46,38 @@ const MyProfile = () => {
             <h2 className='text-lg text-blue-600 ml-10'>My Information</h2>
             <form className='flex flex-column ml-9' onSubmit={handleSubmit(onSubmit)}>
 
-                <div class="card flex-shrink-0  w-full max-w-lg   shadow-2xl bg-base-100">
-                    <div class="card-body">
-                        <input type="text" value={user?.email} placeholder="Type here" class="input input-bordered w-full max-w-lg" readOnly disabled />
-                        <input type="text" value={user?.displayName} placeholder="Type here" class="input input-bordered w-full max-w-lg" readOnly disabled />
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Education</span>
+                <div className="card flex-shrink-0  w-full max-w-lg   shadow-2xl bg-base-100">
+                    <div className="card-body">
+                        <input type="text" value={user?.email} placeholder="Type here" className="input input-bordered w-full max-w-lg" readOnly disabled />
+                        <input type="text" value={user?.displayName} placeholder="Type here" className="input input-bordered w-full max-w-lg" readOnly disabled />
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Education</span>
                             </label>
-                            <input type="text" placeholder="Education" class="input input-bordered"  {...register("name", { required: true, maxLength: 20 })} />
+                            <input type="text" placeholder="Education" className="input input-bordered"  {...register("name", { required: true, maxLength: 20 })} />
                         </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Phone</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Phone</span>
                             </label>
-                            <input placeholder="Phone Number" class="input input-bordered" type="text" {...register("phone", { required: true })} />
+                            <input placeholder="Phone Number" className="input input-bordered" type="text" {...register("phone", { required: true })} />
 
                         </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Location</span>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Location</span>
                             </label>
-                            <input placeholder="Address" class="input input-bordered" type="text" {...register("location", { required: true })} />
+                            <input placeholder="Address" className="input input-bordered" type="text" {...register("location", { required: true })} />
 
                         </div>
-                        {/* <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Link</span>
+                        {/* <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Link</span>
                             </label>
-                            <input class="input input-bordered" placeholder='Photo URL' type="text" {...register("link")} />
+                            <input className="input input-bordered" placeholder='Photo URL' type="text" {...register("link")} />
                         </div> */}
-                        <div class="form-control mt-6">
-                            <button class="btn btn-primary">Submit</button>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>

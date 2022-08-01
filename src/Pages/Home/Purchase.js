@@ -16,7 +16,7 @@ const Purchase = () => {
 
     // for single product loading
     useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://stools-manufacturer.herokuapp.com/product/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data));
@@ -55,7 +55,7 @@ const Purchase = () => {
             img: img,
         }
 
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://stools-manufacturer.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -101,25 +101,25 @@ const Purchase = () => {
                     <input type="text" value={user?.displayName} name='name' placeholder="Name" className="input input-bordered input-primary w-full max-w-lg my-2 text-base" required readOnly disabled />
 
                     {/* ------------ Address ---------------- */}
-                    <div class="form-control w-full max-w-lg">
-                        <label class="label">
-                            <span class="label-text text-lg text-primary">Address</span>
+                    <div className="form-control w-full max-w-lg">
+                        <label className="label">
+                            <span className="label-text text-lg text-primary">Address</span>
                         </label>
                         <input type="text" name='address' placeholder="Address" className="input input-bordered input-primary w-full max-w-lg my-2 text-base" required />
                     </div>
 
                     {/* ------------ Phone ---------------- */}
-                    <div class="form-control w-full max-w-lg">
-                        <label class="label">
-                            <span class="label-text text-lg text-primary">Phone</span>
+                    <div className="form-control w-full max-w-lg">
+                        <label className="label">
+                            <span className="label-text text-lg text-primary">Phone</span>
                         </label>
                         <input type="text" name='phone' placeholder="Phone Number" className="input input-bordered input-primary w-full max-w-lg my-2 text-base" required />
                     </div>
 
                     {/* ------------ Quantity ---------------- */}
-                    <div class="form-control w-full max-w-lg">
-                        <label class="label">
-                            <span class="label-text text-lg text-primary">Order Quantity</span>
+                    <div className="form-control w-full max-w-lg">
+                        <label className="label">
+                            <span className="label-text text-lg text-primary">Order Quantity</span>
                         </label>
                         <input defaultValue={quantity} name='quantity' type="number" min={quantity} max={available} className="input input-bordered input-primary text-center text-xl" placeholder={quantity} required />
                     </div>

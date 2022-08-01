@@ -8,7 +8,7 @@ const SingleOrderRow = ({ order, index, refetch, setOrderDelete }) => {
     // event handler for update
     const handleStatus = (id) => {
         // console.log('clicked');
-        fetch(`http://localhost:5000/allOrders/${id}`, {
+        fetch(`https://stools-manufacturer.herokuapp.com/allOrders/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',
@@ -38,8 +38,8 @@ const SingleOrderRow = ({ order, index, refetch, setOrderDelete }) => {
         <tr>
             <th>{index + 1}</th>
             <td>
-                <div class="avatar">
-                    <div class="w-8 rounded">
+                <div className="avatar">
+                    <div className="w-8 rounded">
                         <img src={img} alt={order.order} />
                     </div>
                 </div>
@@ -60,7 +60,7 @@ const SingleOrderRow = ({ order, index, refetch, setOrderDelete }) => {
             </td>
             <td>
                 {
-                    !order.paid && <label for="singleOrder-delete-modal" class="btn btn-xs btn-error" onClick={setOrderDelete(order)} >Delete</label>
+                    !order.paid && <label htmlFor="singleOrder-delete-modal" className="btn btn-xs btn-error" onClick={setOrderDelete(order)} >Delete</label>
                 }
 
 
