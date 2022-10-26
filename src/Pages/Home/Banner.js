@@ -39,11 +39,14 @@ const Banner = () => {
                                 <h1 className="mb-5 text-3xl lg:text-5xl font-bold font-serif">Best Hands Saw Tools Collection</h1>
                                 <p className="mb-5  lg:text-xl font-bold text-yellow-300">Save 20% off - on your First Order</p>
                                 <button className="btn-sm
-                                lg:mt-16
-                                btn-primary 
-                                animate-bounce 
-                                lg:animate-bounce 
-                                lg:btn lg:btn-primary font-semibold">Shop Now</button>
+                                    bg-gradient-to-r from-primary via-blue-600 to-blue-400
+                                    hover:bg-gradient-to-l
+                                    lg:mt-16
+                                    lg:w-36
+                                    btn-primary animate-bounce 
+                                    lg:animate-bounce 
+                                    lg:btn lg:btn-primary lg:text-base
+                                    font-semibold">Shop Now</button>
                             </div>
                         </div>
                     </div >
@@ -60,11 +63,14 @@ const Banner = () => {
                                 <h1 className="mb-5 text-3xl lg:text-5xl font-bold font-serif">Best Power Tools</h1>
                                 <p className="mb-5 lg:text-xl font-bold text-yellow-300">Save 15% off - on your First Order</p>
                                 <button className="btn-sm
-                                lg:mt-16 
-                                btn-primary 
-                                animate-bounce 
-                                lg:animate-bounce 
-                                lg:btn lg:btn-primary font-semibold">Shop Now</button>
+                                    bg-gradient-to-r from-primary via-blue-600 to-blue-400
+                                    hover:bg-gradient-to-l
+                                    lg:mt-16
+                                    lg:w-36
+                                    btn-primary animate-bounce 
+                                    lg:animate-bounce 
+                                    lg:btn lg:btn-primary lg:text-base
+                                    font-semibold">Shop Now</button>
                             </div>
                         </div>
                     </div >

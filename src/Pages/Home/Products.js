@@ -14,7 +14,11 @@ const Products = () => {
 
     return (
         <div>
-            <h2 className='text-3xl text-center text-blue-900 font-bold pt-20 pb-10'>Tools</h2>
+            <h2 className='text-3xl text-center text-blue-900 font-bold 
+                           pt-20 pb-10 decoration-4 mb-16
+                           underline underline-offset-8 decoration-cyan-400
+                           hover:decoration-orange-500
+                           transition-colors ease-in duration-300'>Tools</h2>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {

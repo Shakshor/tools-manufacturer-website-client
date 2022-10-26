@@ -29,7 +29,15 @@ const Reviews = () => {
 
     return (
         <div className='mt-20'>
-            <h2 className='text-2xl text-center font-bold text-indigo-700'>What Our Customer Say</h2>
+            <h2 className='text-2xl text-center  text-indigo-700
+                            mb-16'>
+                <span className='no-underline decoration-0 text-base text-orange-500'>customer</span>
+                <br />
+                <span className='decoration-4 font-bold
+                                    underline underline-offset-8 decoration-cyan-400
+                                    hover:decoration-orange-500
+                                    transition-colors ease-in duration-300'>What Some Awesome People Say</span>
+            </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5'>
                 {
                     reviews.map(review => <Review review={review} key={review._id} ></Review>)
