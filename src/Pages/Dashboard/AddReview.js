@@ -30,7 +30,7 @@ const AddReview = () => {
             ratings: rating,
             review: text,
         }
-        fetch('https://stools-manufacturer.herokuapp.com/review', {
+        fetch('https://tools-manufacturer-website-server.onrender.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

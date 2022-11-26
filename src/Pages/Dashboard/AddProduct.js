@@ -9,7 +9,7 @@ const AddProduct = () => {
 
 
     // react query
-    const { data: tools, isLoading } = useQuery('tools', () => fetch(`https://stools-manufacturer.herokuapp.com/product`).then(res => res.json))
+    const { data: tools, isLoading } = useQuery('tools', () => fetch(`https://tools-manufacturer-website-server.onrender.com/product`).then(res => res.json))
 
 
     // third party: imgbb api key
@@ -47,7 +47,7 @@ const AddProduct = () => {
                     }
 
                     //send to database
-                    fetch(`https://stools-manufacturer.herokuapp.com/product`, {
+                    fetch(`https://tools-manufacturer-website-server.onrender.com/product`, {
                         method: 'POST',
                         body: JSON.stringify(product),
                         headers: {

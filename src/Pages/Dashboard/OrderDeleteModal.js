@@ -6,7 +6,7 @@ const OrderDeleteModal = ({ orderDelete, setOrderDelete, refetch }) => {
 
     // deleting the specific order
     const handleDelete = id => {
-        fetch(`https://stools-manufacturer.herokuapp.com/orders/${id}`, {
+        fetch(`https://tools-manufacturer-website-server.onrender.com/orders/${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

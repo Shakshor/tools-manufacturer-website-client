@@ -18,7 +18,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
     // using React Query
-    const { data: orders, isLoading, refetch } = useQuery(['orders', user], () => fetch(`https://stools-manufacturer.herokuapp.com/orders?user=${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery(['orders', user], () => fetch(`https://tools-manufacturer-website-server.onrender.com/orders?user=${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

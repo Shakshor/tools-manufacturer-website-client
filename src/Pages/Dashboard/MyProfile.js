@@ -21,7 +21,7 @@ const MyProfile = () => {
         // console.log('inside useToken', user);
         const email = user?.email;
         if (email) {
-            fetch(`https://stools-manufacturer.herokuapp.com/user/${email}`, {
+            fetch(`https://tools-manufacturer-website-server.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

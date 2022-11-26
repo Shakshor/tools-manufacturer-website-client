@@ -16,7 +16,7 @@ const Purchase = () => {
 
     // for single product loading
     useEffect(() => {
-        const url = `https://stools-manufacturer.herokuapp.com/product/${productId}`;
+        const url = `https://tools-manufacturer-website-server.onrender.com/product/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data));
@@ -55,7 +55,7 @@ const Purchase = () => {
             img: img,
         }
 
-        fetch(`https://stools-manufacturer.herokuapp.com/orders`, {
+        fetch(`https://tools-manufacturer-website-server.onrender.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

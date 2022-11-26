@@ -8,7 +8,7 @@ const SingleOrderRow = ({ order, index, refetch, setOrderDelete }) => {
     // event handler for update
     const handleStatus = (id) => {
         // console.log('clicked');
-        fetch(`https://stools-manufacturer.herokuapp.com/allOrders/${id}`, {
+        fetch(`https://tools-manufacturer-website-server.onrender.com/allOrders/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json',

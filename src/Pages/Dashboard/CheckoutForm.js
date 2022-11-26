@@ -23,7 +23,7 @@ const CheckoutForm = ({ order }) => {
 
     // fetch the paymentIntent
     useEffect(() => {
-        fetch('https://stools-manufacturer.herokuapp.com/create-payment-intent', {
+        fetch('https://tools-manufacturer-website-server.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -108,7 +108,7 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id,
                 status: "pending",
             }
-            fetch(`https://stools-manufacturer.herokuapp.com/orders/${_id}`, {
+            fetch(`https://tools-manufacturer-website-server.onrender.com/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

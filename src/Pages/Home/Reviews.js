@@ -18,7 +18,7 @@ const Reviews = () => {
 
 
     useEffect(() => {
-        fetch('https://stools-manufacturer.herokuapp.com/review')
+        fetch('https://tools-manufacturer-website-server.onrender.com/review')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
