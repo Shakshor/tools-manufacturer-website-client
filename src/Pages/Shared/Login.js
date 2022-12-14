@@ -52,7 +52,7 @@ const Login = () => {
 
 
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex h-screen justify-center items-center bg-base-200'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-xl font-bold">Login</h2>
@@ -112,11 +112,27 @@ const Login = () => {
                         {/* ----- error showing ------ */}
                         {signInError}
 
-                        <input className='btn w-full max-w-xs text-white' type="submit" value='Login' />
+                        <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value='Login' />
                     </form>
                     <p><small>New to Doctors Portal? <Link to='/register' className='text-primary' >Create New Account</Link></small></p>
                     <div className="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue With Google</button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-outline hover:bg-secondary-focus">Continue With Google</button>
+
+
+                    {/* ------ demo admin section ----- */}
+                    <div tabIndex={0} className="collapse collapse-arrow border border-base-300 
+                                bg-base-100 rounded-box shadow-lg mt-5">
+                        <input type="checkbox" />
+                        <div className="collapse-title bg-accent  font-medium uppercase">
+                            show demo admin Info
+                        </div>
+                        <div className="collapse-content">
+                            <p className='text-lg'><span className='font-semibold'>Email:</span> abc@ddd.com</p>
+                            <p className='text-lg'><span className='font-semibold'>Password:</span> 123456</p>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
